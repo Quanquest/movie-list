@@ -4,11 +4,11 @@ import React from 'react';
 const MovieList = (props) => {
 	return (
 		<ul>
-			<li>{props.movies[0].title}</li>
-			<li>{props.movies[1].title}</li>
-			<li>{props.movies[2].title}</li>
-			<li>{props.movies[3].title}</li>
-			<li>{props.movies[4].title}</li>
+			{
+				props.films.map(function(film) {
+					return <li>{film}</li>
+				})
+			}
 		</ul>
 
 	)	
@@ -16,3 +16,15 @@ const MovieList = (props) => {
 };
 
 export default MovieList;
+
+      // {
+      //   this.props.items.map(function(item) {
+      //     return <li>{item}</li>
+      //   })
+      //  }
+
+      			// <li>{props.films[0]}</li>
+			// <li>{props.films[1]}</li>
+			// <li>{props.films[2]}</li>
+			// <li>{props.films[3]}</li>
+			// <li>{props.films[4]}</li>

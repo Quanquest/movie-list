@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Search = () => {
+const Search = ({query}) => {
 	return (
-		<input />
+		<input placeholder="Find a film..." onChange={query => handleSearch(query.target.value)} />
 	)
 }
 

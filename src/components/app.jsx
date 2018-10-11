@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import MovieList from './movieList.jsx';
 import Search from './search.jsx';
+import Title from './titleBar.jsx';
 
 
 class App extends React.Component {
@@ -9,21 +9,25 @@ class App extends React.Component {
     super(props);
     this.state = {
       movies: [
-        { title: 'Captain America: The First Avenger' },
-        { title: 'Inglourious Basterds' },
-        { title: 'Crazy Rich Asians' },
-        { title: 'Mission: Impossible - Fallout' },
-        { title: 'Star Trek' }
-      ]
+        'Captain America: The First Avenger',
+        'Inglourious Basterds',
+        'Crazy Rich Asians',
+        'Mission: Impossible - Fallout',
+        'Star Trek'
+      ],
+      query: ''
     };
   };
-
+  handleSearch(query) {
+    this.setState({query});
+  }
 
   render() {
     return (
       <div>
-        <Search />
-        <MovieList movies={this.state.movies} />
+        <Title />
+        <Search handleSearch={this.handleSearch.bind(this)} />
+        <MovieList films={this.state.movies} />
       </div>
     )
   }
