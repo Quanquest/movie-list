@@ -1,16 +1,15 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
 
-const MovieList = (props) => {
+const MovieList = ({films}) => {
 	return (
 		<ul>
 			{
-				props.films.map(function(film) {
+				films.map(function(film) {
 					return <li>{film}</li>
 				})
 			}
 		</ul>
-
 	)	
 
 };

@@ -1,10 +1,15 @@
 import React from 'react';
 
 const Search = ({query}) => {
+	// Misnomer.  Should be filter.
 	return (
-		<input placeholder="Find a film..." onChange={query => handleSearch(query.target.value)} />
+		<input type='text' placeholder="Find film..." />
+		// Needs handleSearch function.
+		// Live filter means on change.
 	)
 }
 
 
 export default Search;
+
+// <input type='text' placeholder="Find film..." onChange/>
