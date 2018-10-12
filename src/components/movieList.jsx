@@ -9,7 +9,7 @@ const MovieList = ({films}) => {
 		<ul>
 			{
 				films.map(function(film) {
-					return <li>{film}</li>
+					return <li>{film.title}</li>
 				})
 			}
 		</ul>

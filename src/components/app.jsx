@@ -10,12 +10,13 @@ class App extends React.Component {
     this.state = {
       // filter this movie list and pass it into movie list
       // should probably move this data to another component
+
       movies: [
-        'Black Panther',
-        'Inglourious Basterds',
-        'Crazy Rich Asians',
-        'Zoolander',
-        'Tombstone'
+        {title: 'Black Panther'},
+        {title: 'Inglourious Basterds'},
+        {title: 'Crazy Rich Asians'},
+        {title: 'Zoolander'},
+        {title: 'Tombstone'}
       ],
       select: [],
       query: ''
@@ -27,7 +28,7 @@ class App extends React.Component {
   }
 
   handleSearch(event){
-    var filtMovies = this.state.movies.filter(film => film.toLowerCase().includes(event.target.value));
+    var filtMovies = this.state.movies.filter(film => film.title.toLowerCase().includes(event.target.value));
 
     this.setState({query: event.target.value, select: filtMovies})
   };
