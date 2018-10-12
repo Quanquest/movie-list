@@ -2,7 +2,7 @@ import React from 'react';
 
 const Title = () => {
 	return (
-		<h1>Fantastic Films</h1>
+		<h1>Write a List of Films</h1>
 	)
 }
 

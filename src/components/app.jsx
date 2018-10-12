@@ -2,7 +2,7 @@ import React from 'react';
 import MovieList from './movieList.jsx';
 import Search from './search.jsx';
 import Title from './titleBar.jsx';
-import AddList from './addList.jsx';
+// import AddList from './addList.jsx';
 import Add from './add.jsx';
 
 class App extends React.Component {
@@ -13,11 +13,11 @@ class App extends React.Component {
       // should probably move this data to another component
 
       movies: [
-        {title: 'Black Panther'},
-        {title: 'Pulp Fiction'},
-        {title: 'Crazy Rich Asians'},
-        {title: 'Zoolander'},
-        {title: 'Tombstone'}
+        // {title: 'Black Panther'},
+        // {title: 'Pulp Fiction'},
+        // {title: 'Crazy Rich Asians'},
+        // {title: 'Zoolander'},
+        // {title: 'Tombstone'}
       ],
       value: '',
       select: [],
@@ -42,9 +42,9 @@ class App extends React.Component {
   handleAdd(event) {
     // console.log('Hail Satan')
     // this.setState({movies: this.state.movies.push(event.target.value)})
-    var newFilm = {title: this.state.value}
-    this.setState({movies: [...this.state.movies, newFilm]})
     event.preventDefault();
+    var newFilm = {title: this.state.value}
+    this.setState({movies: [...this.state.movies, newFilm], select: [...this.state.select, newFilm], value: ''})
   }
 
   render() {
