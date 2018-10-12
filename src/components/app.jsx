@@ -11,23 +11,26 @@ class App extends React.Component {
       // filter this movie list and pass it into movie list
       // should probably move this data to another component
       movies: [
-        'Captain America: The First Avenger',
+        'Black Panther',
         'Inglourious Basterds',
         'Crazy Rich Asians',
-        'Mission: Impossible - Fallout',
-        'Star Trek'
+        'Zoolander',
+        'Tombstone'
       ],
-      query: []
+      select: [],
+      query: ''
     };
   };
 
-  // What does this do?  Does it invoke on initialization?
   componentDidMount() {
-    this.setState({query: this.state.movies})
+    this.setState({select: this.state.movies})
   }
 
-  handleSearch(){
-    // Sets new state? Bind to search input.
+  handleSearch(event){
+    this.setState({query: event.target.value})
+    var filtMovies = this.state.movies.filter(film => film.toLowerCase().includes(this.state.query/**/));
+    this.setState({select: filtMovies})
+
   };
 
   render() {
@@ -35,7 +38,7 @@ class App extends React.Component {
       <div>
         <Title />
         <Search handleSearch={this.handleSearch.bind(this)} />
-        <MovieList films={this.state.query} />
+        <MovieList films={this.state.select} />
       </div>
     )
   }

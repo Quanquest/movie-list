@@ -3,7 +3,7 @@ import React from 'react';
 const Search = ({handleSearch}) => {
 	// Misnomer.  Should be filter.
 	return (
-		<input type='text' placeholder="Find film..." />
+		<input type='text' placeholder="Find film..." onChange={handleSearch} />
 		// Needs handleSearch function.
 		// Live filter means on change.
 	)
