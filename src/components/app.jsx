@@ -27,10 +27,9 @@ class App extends React.Component {
   }
 
   handleSearch(event){
-    this.setState({query: event.target.value})
-    var filtMovies = this.state.movies.filter(film => film.toLowerCase().includes(this.state.query/**/));
-    this.setState({select: filtMovies})
+    var filtMovies = this.state.movies.filter(film => film.toLowerCase().includes(event.target.value));
 
+    this.setState({query: event.target.value, select: filtMovies})
   };
 
   render() {
@@ -39,6 +38,7 @@ class App extends React.Component {
         <Title />
         <Search handleSearch={this.handleSearch.bind(this)} />
         <MovieList films={this.state.select} />
+
       </div>
     )
   }
