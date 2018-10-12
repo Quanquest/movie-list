@@ -4,6 +4,7 @@ import Search from './search.jsx';
 import Title from './titleBar.jsx';
 // import AddList from './addList.jsx';
 import Add from './add.jsx';
+import PhaseOne from './mcu.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -47,12 +48,19 @@ class App extends React.Component {
     this.setState({movies: [...this.state.movies, newFilm], select: [...this.state.select, newFilm], value: ''})
   }
 
+  marvel(event) {
+    event.preventDefault();
+    var phaseOneTitles = [{title: 'Iron Man'}, {title: 'The Incredible Hulk'}, {title: 'Iron Man 2'}, {title: 'Thor'}, {title: 'Captain America: The First Avenger'}, {title: 'The Avengers'}]
+    this.setState({movies: [...this.state.movies, ...phaseOneTitles], select: [...this.state.select, ...phaseOneTitles]})
+  }
+
   render() {
     return (
       <div>
         <Title />
         <Search handleSearch={this.handleSearch.bind(this)} />
         <Add handleAdd={this.handleAdd.bind(this)} handleChange={this.handleChange.bind(this)} />
+        <PhaseOne marvel={this.marvel.bind(this)} />
         <MovieList films={this.state.select} />
 
       </div>
